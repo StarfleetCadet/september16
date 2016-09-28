@@ -21,13 +21,15 @@ public class Main
     {
        String input = "";
        String sign = "" ;
+       //char draw = '\0';
        int height = 0;
        
        input = JOptionPane.showInputDialog("Please type the height of your Tree: ");
        height = Integer.parseInt(input);
        sign = JOptionPane.showInputDialog("Please type any sign for drawing your personal tree: ");
+       char draw = sign.charAt(0);
        
-       ChristmasTree myTree = new ChristmasTree(height);
+       ChristmasTree myTree = new ChristmasTree(height, draw);
        
        myTree.paint();
        System.out.println("Merry X-mas");

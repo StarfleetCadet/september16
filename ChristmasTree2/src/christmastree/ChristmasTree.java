@@ -12,10 +12,12 @@ package christmastree;
 public class ChristmasTree 
 {
     int height = 0;
+    char draw = '\0';
     
-    ChristmasTree(int x) 
+    ChristmasTree(int x, char draw) 
     {
         height = x;
+        this.draw = draw;
     }
     
     public void paint() 
@@ -30,6 +32,8 @@ public class ChristmasTree
     private void paintCrown() 
     {
         String row = "";
+        //
+        char draw = '\0';
         
         for (int rowNo = 1; rowNo <= height; rowNo++)
         {
@@ -44,9 +48,10 @@ public class ChristmasTree
 //        
 //    }
     
-    private String createRow(int rowNo)
+    private String createRow(int rowNo, char draw)
     {
         String row = "";
+        
         int blankSpace = height - rowNo;
         
         for( int i = 0; i < blankSpace; i++) 
@@ -58,7 +63,7 @@ public class ChristmasTree
         
         for (int i = 1; i <= sign; i++)
         {
-            row += "*";
+            row += draw;
         }
         
         return row;
