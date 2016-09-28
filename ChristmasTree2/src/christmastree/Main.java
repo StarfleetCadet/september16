@@ -20,16 +20,17 @@ public class Main
     public static void main(String[] args) 
     {
        String input = "";
-       String sign = "" ;
+       String symbol = "" ;
        //char draw = '\0';
        int height = 0;
        
        input = JOptionPane.showInputDialog("Please type the height of your Tree: ");
        height = Integer.parseInt(input);
-       sign = JOptionPane.showInputDialog("Please type any sign for drawing your personal tree: ");
-       char draw = sign.charAt(0);
+       symbol = JOptionPane.showInputDialog("Please type any sign for drawing your personal tree: ");
        
-       ChristmasTree myTree = new ChristmasTree(height, draw);
+       //char draw = sign.charAt(0);
+       
+       ChristmasTree myTree = new ChristmasTree(height, symbol);
        
        myTree.paint();
        System.out.println("Merry X-mas");

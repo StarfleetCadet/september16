@@ -12,12 +12,12 @@ package christmastree;
 public class ChristmasTree 
 {
     int height = 0;
-    char draw = '\0';
+    String symbol = "\\u2734";
     
-    ChristmasTree(int x, char draw) 
+    ChristmasTree(int x, String symbol) 
     {
         height = x;
-        this.draw = draw;
+        this.symbol = symbol;
     }
     
     public void paint() 
@@ -33,24 +33,48 @@ public class ChristmasTree
     {
         String row = "";
         //
-        char draw = '\0';
+        this.symbol = symbol;
         
         for (int rowNo = 1; rowNo <= height; rowNo++)
         {
-            row = createRow(rowNo);
+            row = createRow(rowNo, symbol);
             System.out.println(row);
            
         }
     }
     
-//    private void paintRoot()
-//    {
-//        
-//    }
+    private void paintRoot()
+    {
+        
+////         String trunk = "";
+//            int blankSpace = rows - 1;
+//            // height of trunk is height of tree/2
+//            int heightTrunk = rows / 2;
+//            
+//            String tree = "";
+//            
+//            // create row blank spaces
+//             for(int column = 0; column < blankSpace; column++) 
+//            {
+//                tree = tree + " ";
+//            }
+//
+//             // add * to blank spaces for the tree-trunk
+//             tree = tree + "*";
+//          
+//            for(int rowNo = 0; rowNo < heightTrunk; rowNo++)
+//            {   
+//                 // print row
+//                 System.out.println(tree);
+//            }
+    }
     
-    private String createRow(int rowNo, char draw)
+    private String createRow(int rowNo, String symbol)
     {
         String row = "";
+        //symbol = "";
+        //this.symbol = symbol;
+        //Character.toString(draw);
         
         int blankSpace = height - rowNo;
         
@@ -60,12 +84,15 @@ public class ChristmasTree
         }
         
         int sign = 2 * rowNo - 1;
+        //this.symbol = symbol;
+       
         
         for (int i = 1; i <= sign; i++)
         {
-            row += draw;
+            row += symbol;
         }
         
         return row;
+        
     }
 }
