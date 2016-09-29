@@ -1,4 +1,11 @@
 -Application GuessNumberGame
 -there was just hope at long last that someday i will understand (just a little bit) coding...and i notice after just one week...
 day by day, step by step it's getting better and better (with all that stuff arround me :-) so there is still hope that someday
-i will get some (maybe not all) but some more of the Git-Secrets. But i notice...it's getting better and better day by day 
+i will get some (maybe not all) but some more of the Git-Secrets. But i notice...it's getting better and better day by day
+-------------------------------------------------------------------------------------------------------------------------------
+The game works so far but it is not exactly what i want. I want it more 'elegant'...could i use endless nested 
+if-statements or make it sense to use logical operators (to work through two(or more)cases at the first if) or should i use switch-case? 
+i want a wider range of insult but maybe the switch-case is not really leaner!? thinking about to use an array with a random insult but 
+in a rising intensity :-) this must be possible to 
+-----------------------------------------------------------------------------------------------------------------------------
+-The GuessNumberGame: A pastime fun for the whole family (includes a bunch of cheer up humiliations)
