@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package guessnumbergame;
-import java.swing.JOptionPane;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -21,7 +21,32 @@ public class GuessNumberGame {
         int number = 0;
         int rndNumber = 0;
         int trys = 0;
-        boolean guessed = false;
+        boolean guess = false;
+        
+        //random number between 1 and 100
+        // +1 to exclude zero
+        rndNumber = (int)(Math.random()* 100 + 1);
+        
+        while (!guess)
+        {
+            input = JOptionPane.showInputDialog(++trys + ". Try ");
+            number = Integer.parseInt(input);
+            
+            if (number == rndNumber)
+            {
+                guess = true;
+                JOptionPane.showMessageDialog(null, "Really good you got it! ");
+                if (trys > 6)
+                    JOptionPane.showMessageDialog(null, "Hmm, was not very fast! ");
+            }
+            
+            else 
+            {
+                JOptionPane.showMessageDialog(null, guess);
+            }
+        }
+        
+       
     }
     
 }
