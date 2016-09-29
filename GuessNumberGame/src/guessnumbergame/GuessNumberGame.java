@@ -10,7 +10,8 @@ import javax.swing.JOptionPane;
  *
  * @author aviva
  */
-public class GuessNumberGame {
+public class GuessNumberGame 
+{
 
     /**
      * @param args the command line arguments
@@ -32,7 +33,7 @@ public class GuessNumberGame {
             input = JOptionPane.showInputDialog(++trys + ". Try ");
             number = Integer.parseInt(input);
             
-            if (number == rndNumber)
+            if (number == rndNumber )
             {
                 guess = true;
                 JOptionPane.showMessageDialog(null, "Really good you got it! ");
@@ -40,10 +41,39 @@ public class GuessNumberGame {
                     JOptionPane.showMessageDialog(null, "Hmm, was not very fast! ");
             }
             
-            else 
+            else if (rndNumber > number)
             {
-                JOptionPane.showMessageDialog(null, guess);
+                JOptionPane.showMessageDialog(null, "The figure is larger ! \n"
+                    + "That was the " + trys + ". try");
+                if (trys >= 4)
+                {
+                JOptionPane.showMessageDialog(null, "Try harder blockhead! ");
+                }
+                if (trys >= 6)
+                    {   
+                    JOptionPane.showMessageDialog(null, "Wretched ! ");
+                    }
+                if (trys >= 7)
+                {
+                    JOptionPane.showMessageDialog(null, "Serious ? ");
+                }
+                
             }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "My Number is lower ! \n"
+                    + "That was your " + trys + ". try");
+                if (trys >= 4)
+                {
+                    JOptionPane.showMessageDialog(null, "Don't waste my time loser !");
+                }
+                if (trys >= 6)
+                {
+                    JOptionPane.showMessageDialog(null, " Shoot me ! ");
+                    JOptionPane.showMessageDialog(null, " No! Someone should shoot you !" );
+                }
+            }
+                
         }
         
        
