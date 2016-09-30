@@ -43,10 +43,21 @@ public class ChristmasTree
         }
     }
     
-    private void paintRoot()
-    {
+//    private void paintRoot()
+//    {
+//    
+    
+//        String row = "";
+//        this.symbol = symbol;
+//        int blankSpace 
+//        
+//        for(int columnNO = 1; columnNo <= height; columnNo++)
+//        {
+//            
+//        }
+            
         
-////         String trunk = "";
+//         String trunk = "";
 //            int blankSpace = rows - 1;
 //            // height of trunk is height of tree/2
 //            int heightTrunk = rows / 2;
@@ -67,8 +78,10 @@ public class ChristmasTree
 //                 // print row
 //                 System.out.println(tree);
 //            }
-    }
-    
+    //}
+    //}
+//}
+    //private String createTrunk(int blankSpace,  ) 
     private String createRow(int rowNo, String symbol)
     {
         String row = "";

@@ -5,6 +5,7 @@
  */
 package christmastree;
 
+import java.awt.HeadlessException;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,28 +14,44 @@ import javax.swing.JOptionPane;
  */
 public class Main 
 {
-    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) 
     {
-       String input = "";
-       String symbol = "" ;
-       //char draw = '\0';
-       int height = 0;
-       
-       input = JOptionPane.showInputDialog("Please type the height of your Tree: ");
-       height = Integer.parseInt(input);
-       symbol = JOptionPane.showInputDialog("Please type any sign for drawing your personal tree: ");
-       
+
+        String symbol;
+        //char draw = '\0';
+        int height;
+        ChristmasTree myTree;
+
+        height = getHeightFromUser();
+        symbol = getSymbolFromUser();
        //char draw = sign.charAt(0);
-       
-       ChristmasTree myTree = new ChristmasTree(height, symbol);
-       
-       myTree.paint();
-       System.out.println("Merry X-mas");
-       
+
+        myTree = new ChristmasTree(height, symbol);
+        myTree.paint();
+
+        System.out.println("Merry X-mas");
+
     }
-    
+
+    public static String getSymbolFromUser() throws HeadlessException 
+    {
+        String symbol;
+
+        symbol = JOptionPane.showInputDialog("Please type any sign for drawing your personal tree: ");
+
+        return symbol;
+    }
+
+    private static int getHeightFromUser() throws HeadlessException, NumberFormatException {
+        String input;
+        int height;
+
+        input = JOptionPane.showInputDialog("Please type the height of your Tree: ");
+        height = Integer.parseInt(input);
+
+        return height;
+    }
 }
