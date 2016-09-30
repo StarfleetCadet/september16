@@ -11,30 +11,25 @@ package christmastree;
  */
 public class ChristmasTree 
 {
-    int height = 0;
+    private int height = 0;
     String symbol = "\\u2734";
     
-    ChristmasTree(int x, String symbol) 
+    public ChristmasTree(int height, String symbol) 
     {
-        height = x;
+        this.height = height;
         this.symbol = symbol;
     }
     
     public void paint() 
     {
-        
         paintCrown();
-        
-        //paintRoot();
+       //paintRoot();
         
     }
     
     private void paintCrown() 
     {
-        String row = "";
-        //
-        this.symbol = symbol;
-        
+        String row;
         for (int rowNo = 1; rowNo <= height; rowNo++)
         {
             row = createRow(rowNo, symbol);
@@ -85,27 +80,39 @@ public class ChristmasTree
     private String createRow(int rowNo, String symbol)
     {
         String row = "";
-        //symbol = "";
-        //this.symbol = symbol;
         //Character.toString(draw);
-        
         int blankSpace = height - rowNo;
         
-        for( int i = 0; i < blankSpace; i++) 
-        {
-            row += " ";
-        }
-        
+        row = getSpace(blankSpace, row);
         int sign = 2 * rowNo - 1;
-        //this.symbol = symbol;
-       
-        
+              
         for (int i = 1; i <= sign; i++)
         {
             row += symbol;
         }
-        
+        row = getSpace(blankSpace, row);
+                
         return row;
         
+    }
+
+    private String getSpace(int blankSpace) 
+     String row = " ";     
+    {
+        for( int i = 0; i < blankSpace; i++)
+            
+        {
+            row += ".";
+        }
+        return row;
+    }
+     private void String addSpace(int blankSpace, String row) 
+    {
+        for( int i = 0; i < blankSpace; i++)
+            
+        {
+            row += ".";
+        }
+       
     }
 }
