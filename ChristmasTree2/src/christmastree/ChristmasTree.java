@@ -83,36 +83,40 @@ public class ChristmasTree
         //Character.toString(draw);
         int blankSpace = height - rowNo;
         
-        row = getSpace(blankSpace, row);
-        int sign = 2 * rowNo - 1;
-              
-        for (int i = 1; i <= sign; i++)
-        {
-            row += symbol;
-        }
-        row = getSpace(blankSpace, row);
-                
+        row += getSpace(blankSpace);
+        row = getTreePart(rowNo, row, symbol, blankSpace);      
         return row;
         
     }
 
-    private String getSpace(int blankSpace) 
-     String row = " ";     
+    private String getTreePart(int rowNo, String row, String symbol1, int blankSpace) 
     {
-        for( int i = 0; i < blankSpace; i++)
-            
+        int sign = 2 * rowNo - 1;
+        for (int i = 1; i <= sign; i++) 
         {
-            row += ".";
+            row += symbol1;
         }
+        //addSpace(blankSpace, row);
+        row += getSpace(blankSpace); 
+        
         return row;
     }
-     private void String addSpace(int blankSpace, String row) 
+
+    private String getSpace(int blankSpace) 
     {
+        String rowPart = "";
         for( int i = 0; i < blankSpace; i++)
             
         {
+            rowPart += ".";
+        }
+        return rowPart;
+    }
+     private void addSpace(int blankSpace, String row) 
+    {
+        for( int i = 0; i < blankSpace; i++)
+        {
             row += ".";
         }
-       
     }
 }
