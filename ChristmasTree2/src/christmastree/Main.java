@@ -5,38 +5,39 @@
  */
 package christmastree;
 
-import java.awt.HeadlessException;
-import javax.swing.JOptionPane;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  *
  * @author aviva
  */
-public class Main 
+public class Main
 {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) 
+    public static void main(String[] args)
     {
 
         String symbol;
         //char draw = '\0';
         int height;
-        ChristmasTree myTree;
+        //ChristmasTree myTree;
+        ChristmasTreeUsingStringBuilder myTree;
 
         height = getHeightFromUser();
         symbol = getSymbolFromUser();
        //char draw = sign.charAt(0);
 
-        myTree = new ChristmasTree(height, symbol);
+        myTree = new ChristmasTreeUsingStringBuilder(height, symbol);
         myTree.paint();
 
         System.out.println("Merry X-mas");
 
     }
 
-    public static String getSymbolFromUser() throws HeadlessException 
+    public static String getSymbolFromUser() throws HeadlessException
     {
         String symbol;
 
